@@ -323,7 +323,7 @@ export default function Portfolio() {
                                         badge: "INDIAN PATENT APPLICATION",
                                         desc: "Filed as Co-Inventor with MSRIT · Application No. 202641084253 · Filed 09 Jul 2026",
                                         abstract: "Patent application for a low-power real-time video anomaly detection architecture operating on edge devices. Designed to deliver high throughput and instant alert generation with minimal power consumption on resource-constrained embedded systems.",
-                                        video: "/3.mp4",
+                                        video: "/9.mp4",
                                         color: "cyan",
                                         reversed: false
                                     },
