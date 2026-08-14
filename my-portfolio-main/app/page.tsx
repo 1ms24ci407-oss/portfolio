@@ -224,7 +224,7 @@ export default function Portfolio() {
                                 </motion.div>
 
                                 <motion.h1 variants={fadeInUp} className="text-[1.1rem] sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-2 md:mb-4 brand-logo whitespace-nowrap sm:whitespace-normal">
-                                    Priyadarshini V
+                                    vespera-works
                                     <span className="text-gradient font-inter tracking-normal normal-case block text-[1.1rem] sm:text-4xl md:text-5xl lg:text-6xl whitespace-normal">{typedTitle}<span className="animate-pulse text-cyan-400">|</span></span>
                                 </motion.h1>
 
@@ -797,7 +797,7 @@ export default function Portfolio() {
                                 Designed and developed with passion for Artificial Intelligence and Innovation.
                             </p>
                             <p className="text-muted-foreground/80 text-xs font-normal">
-                                © 2026 Priyadarshini V. All rights reserved.
+                                © 2026 vespera-works. All rights reserved.
                             </p>
                         </div>
                     </div>

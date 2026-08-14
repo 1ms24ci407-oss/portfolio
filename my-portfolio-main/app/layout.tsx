@@ -14,8 +14,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Priyadarshini V | AI & ML Portfolio",
-  description: "Portfolio of Priyadarshini V, specializing in Deep Learning, ML, and AI Systems.",
+  title: "vespera-works | AI & ML Portfolio",
+  description: "Portfolio of vespera-works, specializing in Deep Learning, ML, and AI Systems.",
 };
 
 export default function RootLayout({
