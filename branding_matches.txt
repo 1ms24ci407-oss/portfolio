@@ -1,0 +1,15 @@
+﻿
+served_index.txt:6:<title>Priyadarshini V â AI/ML Engineer &amp; 
+Researcher</title>
+served_index.txt:281:  <div style="font-family:'Baloo 2',cursive; 
+font-size:1.8rem; font-weight:800; color:var(--plum);">Priyadarshini V</div>
+served_index.txt:324:      <h1>Priyadarshini V</h1>
+served_index.txt:486:<footer>Designed &amp; built for Priyadarshini V Â· 
+Bengaluru, Karnataka Â· Â© 2026</footer>
+my-portfolio-main\temp_old_page.tsx:87:                                
+Priyadarshini V<br />
+my-portfolio-main\temp_old_page.tsx:539:                        <p 
+className="text-slate-500 font-medium text-sm">┬⌐ 2026 Priyadarshini V. All 
+rights reserved.</p>
+
+

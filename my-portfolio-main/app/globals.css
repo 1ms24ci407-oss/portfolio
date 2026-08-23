@@ -76,12 +76,15 @@
     @apply border-border outline-ring/50;
   }
 
+  html {
+    font-size: 100%; /* 16px root base size */
+    @apply font-sans scroll-smooth;
+  }
+
   body {
     @apply bg-background text-foreground selection:bg-cyan-500/30 antialiased;
-    font-size: 1.0625rem;
-    /* 17px equivalent for better readability */
-    line-height: 1.8;
-    /* Increased line spacing */
+    font-size: 1rem; /* 16px readability limit minimum */
+    line-height: 1.6; /* 1.5 - 1.6 line height for body */
     background-color: #0B0E14;
     background-image:
       radial-gradient(at 0% 0%, rgba(0, 209, 255, 0.05) 0px, transparent 50%),
@@ -92,8 +95,30 @@
     font-family: var(--font-poppins);
   }
 
-  html {
-    @apply font-sans scroll-smooth;
+  /* Typography System according to design hierarchy guidelines */
+  .hero-title {
+    font-size: clamp(2.25rem, 5vw, 4.5rem); /* 36px - 72px (mobile 36px-48px, desktop 48px-72px) */
+    line-height: 1.15;
+  }
+
+  .section-heading {
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem); /* 28px - 40px (mobile scaled by 20-30%, desktop 32px-40px) */
+    line-height: 1.25;
+  }
+
+  .sub-heading {
+    font-size: clamp(1.25rem, 2vw, 1.5rem); /* 20px - 24px */
+    line-height: 1.35;
+  }
+
+  .body-text {
+    font-size: clamp(1rem, 1.1vw, 1.125rem); /* 16px - 18px */
+    line-height: 1.6;
+  }
+
+  .caption-text {
+    font-size: clamp(0.75rem, 1vw, 0.875rem); /* 12px - 14px */
+    line-height: 1.4;
   }
 }
 
@@ -197,4 +222,12 @@
     animation: skill-glow 1.4s ease-in-out infinite;
   }
 
+}
+
+/* Hide Next.js Dev Indicator Badge */
+nextjs-portal,
+[data-nextjs-toast],
+[data-nextjs-dialog-overlay],
+[data-nextjs-dev-overlay-button] {
+  display: none !important;
 }
