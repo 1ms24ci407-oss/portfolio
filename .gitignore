@@ -77,7 +77,6 @@ Zone.Identifier
 *.sw?
 
 # Media & Temporary Files
-*.mp4
 *.tmp
 *.bak
 *.swp
