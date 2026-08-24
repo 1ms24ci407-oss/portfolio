@@ -7,20 +7,25 @@ node_modules/
 # Next.js & Build Outputs
 .next/
 **/.next/
+_next/
+**/_next/
 out/
 **/out/
 build/
 dist/
 .vercel/
+.turbo/
 *.tsbuildinfo
+*.build.js
 
-# Logs & Debug
+# Logs & Debugging
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 .pnpm-debug.log*
+logs/
 
 # Environment Variables & Secrets
 .env
@@ -30,25 +35,59 @@ pnpm-debug.log*
 .env.production.local
 .env*.local
 *.pem
+*.key
+*.crt
 
-# Python & Caches
+# Python & Virtual Environments
 __pycache__/
 *.py[cod]
 *$py.class
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
 .venv/
 venv/
 env/
+ENV/
+env.bak/
+venv.bak/
 
-# Operating System & IDE
+# Operating System & IDEs
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
 desktop.ini
-.vscode/
-.idea/
+Zone.Identifier
 
-# Media & Temp Files
+# IDE Configs
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Media & Temporary Files
 *.mp4
 *.tmp
 *.bak
+*.swp
+
+# Temporary Generated Files
+branding_matches.txt
+served_index.txt
+
+# AI Tooling & Local Caches
+.gemini/
+.claude/
+.cursor/
 
