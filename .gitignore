@@ -90,3 +90,13 @@ served_index.txt
 .claude/
 .cursor/
 
+# Next.js generated files
+.next/
+minimal/_next/
+
+# Build/output files
+out/
+my-portfolio-main/out/
+
+# Generated files
+served_index.txt
