@@ -346,6 +346,8 @@ export default function Portfolio() {
                                         badge: "ICAIHC 2026 - Under Review",
                                         desc: "Learned Fusion Autoencoder Ensemble and Interpretability Transformer for turbofan engine anomaly detection and RUL prediction benchmarked on NASA CMAPSS dataset.",
                                         video: "/5.mp4",
+                                        github: "https://github.com/Priya67803/Aircraft_dashboard",
+                                        demo: "https://aircraft-dashboard.onrender.com/",
                                         href: "mailto:www.priya6780@gmail.com?subject=Inquiry: Scalable Fault Detection in Aircraft Engines",
                                     },
                                 ]}
