@@ -501,13 +501,13 @@ export default function Portfolio() {
                                 <p className="text-slate-400 text-lg">Whether it's a project collaboration, a job opportunity, or just a chat about AIΓÇöI'm always open to networking.</p>
                             </motion.div>
                             <motion.div variants={slideInRight} className="space-y-6">
-                                <a href="mailto:priya6780@gmail.com" className="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/10 hover:border-cyan-500/50 transition-colors group">
+                                <a href="mailto:www.priya6780@gmail.com" className="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/10 hover:border-cyan-500/50 transition-colors group">
                                     <div className="w-12 h-12 bg-cyan-500/10 rounded-full flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
                                         <Mail className="w-6 h-6" />
                                     </div>
                                     <div>
                                         <h4 className="text-white font-bold">Email</h4>
-                                        <p className="text-slate-400 text-sm">priya6780@gmail.com</p>
+                                        <p className="text-slate-400 text-sm">www.priya6780@gmail.com</p>
                                     </div>
                                 </a>
                                 <a href="https://www.linkedin.com/in/priya-v-77b396273/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/10 hover:border-blue-500/50 transition-colors group">
@@ -544,7 +544,7 @@ export default function Portfolio() {
                             <a href="https://www.linkedin.com/in/priya-v-77b396273/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-cyan-500/20 hover:text-cyan-400 hover:scale-110 transition-all duration-300 group">
                                 <Linkedin className="w-5 h-5 group-hover:-rotate-12 transition-transform" />
                             </a>
-                            <a href="mailto:priya6780@gmail.com" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-cyan-500/20 hover:text-cyan-400 hover:scale-110 transition-all duration-300 group">
+                            <a href="mailto:www.priya6780@gmail.com" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-cyan-500/20 hover:text-cyan-400 hover:scale-110 transition-all duration-300 group">
                                 <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
                             </a>
                         </div>

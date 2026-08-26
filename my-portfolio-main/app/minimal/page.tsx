@@ -328,7 +328,7 @@ export default function Portfolio() {
                                         badge: "INDIAN PATENT APPLICATION",
                                         desc: "Filed as Co-Inventor with MSRIT (App No. 202641084253 - Filed 09 Jul 2026). Patent application for a low-power real-time video anomaly detection architecture operating on edge devices to deliver high throughput with minimal power consumption.",
                                         video: "/9.mp4",
-                                        href: "mailto:priya6780@gmail.com?subject=Inquiry: Low-Power Real-Time Video Anomaly Detection on Edge",
+                                        href: "mailto:www.priya6780@gmail.com?subject=Inquiry: Low-Power Real-Time Video Anomaly Detection on Edge",
                                     },
                                     {
                                         id: "icefeet-pulmonary-hypertension",
@@ -336,7 +336,7 @@ export default function Portfolio() {
                                         badge: "ICEFEET 2026 - Under Review",
                                         desc: "Non-invasive, multi-model deep learning solution combining DenseNet and Grad-CAM++ for early diagnosis and classification of pulmonary hypertension from CT images.",
                                         video: "/4.mp4",
-                                        href: "mailto:priya6780@gmail.com?subject=Inquiry: Hybrid Intelligence Learning Architecture",
+                                        href: "mailto:www.priya6780@gmail.com?subject=Inquiry: Hybrid Intelligence Learning Architecture",
                                     },
                                     {
                                         id: "icaihc-aircraft-engine-faults",
@@ -344,7 +344,7 @@ export default function Portfolio() {
                                         badge: "ICAIHC 2026 - Under Review",
                                         desc: "Learned Fusion Autoencoder Ensemble and Interpretability Transformer for turbofan engine anomaly detection and RUL prediction benchmarked on NASA CMAPSS dataset.",
                                         video: "/5.mp4",
-                                        href: "mailto:priya6780@gmail.com?subject=Inquiry: Scalable Fault Detection in Aircraft Engines",
+                                        href: "mailto:www.priya6780@gmail.com?subject=Inquiry: Scalable Fault Detection in Aircraft Engines",
                                     },
                                 ]}
                             />
@@ -778,7 +778,7 @@ export default function Portfolio() {
                                                 <div className="p-2 rounded-full bg-white/5 border border-white/10 text-cyan-400">
                                                     <Mail className="w-5 h-5" />
                                                 </div>
-                                                <span className="font-medium">priya6780@gmail.com</span>
+                                                <span className="font-medium">www.priya6780@gmail.com</span>
                                             </div>
                                             <div className="flex gap-4">
                                                 <a href="https://linkedin.com" className="p-3 rounded-full bg-white/5 border border-white/10 text-blue-400 hover:bg-blue-500 hover:text-white transition-all">
@@ -860,7 +860,7 @@ export default function Portfolio() {
                                     <a href="https://www.linkedin.com/in/priya-v-77b396273/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:bg-blue-500/20 hover:text-blue-400 transition-all">
                                         <Linkedin className="w-5 h-5" />
                                     </a>
-                                    <a href="mailto:priya6780@gmail.com" className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:bg-red-500/20 hover:text-red-400 transition-all">
+                                    <a href="mailto:www.priya6780@gmail.com" className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:bg-red-500/20 hover:text-red-400 transition-all">
                                         <Mail className="w-5 h-5" />
                                     </a>
                                 </div>
