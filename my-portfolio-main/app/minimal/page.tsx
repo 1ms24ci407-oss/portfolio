@@ -473,8 +473,8 @@ export default function Portfolio() {
                                         desc: "Built a high-performance NLP dashboard that reduced latency by 20% while detecting nuanced linguistic biases in real-time.",
                                         video: "/2.mp4",
                                         tags: ["FastText", "VADER", "TextStat", "NLP"],
-                                        github: "https://github.com/Priya67803/NLP_.git",
-                                        demo: "#",
+                                        github: "https://github.com/Shreyaa-14/NLP-Text-Analyzer",
+                                        demo: "https://nlp-text-analyzer.onrender.com/",
                                     },
                                     {
                                         id: "graph-rag",
