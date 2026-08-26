@@ -8,6 +8,7 @@ import AntiGravitySkill from "@/components/AntiGravitySkill";
 // import ImageSequenceViewer from "@/components/ImageSequenceViewer";
 import { Github, Linkedin, Mail, Download, ArrowRight, ExternalLink, FileText, Award, BrainCircuit, MessageSquare, Zap, Users, Send, Database, Cpu, Layers, ShieldCheck, Terminal, Network, Menu, X, Briefcase } from "lucide-react";
 import React from "react";
+import PublicationsScrollContainer from "@/components/ui/motion-scroll-container";
 
 function useTypingEffect(words: string[], typingSpeed = 90, deletingSpeed = 55, pauseMs = 1800) {
     const [displayed, setDisplayed] = React.useState("");
@@ -305,7 +306,7 @@ export default function Portfolio() {
                     {/* Patents & Publications */}
                     <section id="publications" className="min-h-[80vh] flex items-center py-20 bg-[#0B0E14]/50 overflow-hidden">
                         <motion.div
-                            className="max-w-7xl mx-auto px-6"
+                            className="max-w-7xl mx-auto px-6 w-full"
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true, margin: "-200px" }}
@@ -315,89 +316,38 @@ export default function Portfolio() {
                                 <h2 className="text-3xl md:text-5xl font-bold text-white">Patents & Publications</h2>
                                 <div className="flex-grow h-[1px] bg-gradient-to-r from-cyan-500/50 to-transparent ml-4" />
                             </div>
-                            <p className="text-muted-foreground text-lg mb-14 max-w-3xl">
+                            <p className="text-muted-foreground text-lg mb-10 max-w-3xl">
                                 My patents and research focus on applying artificial intelligence to solve complex edge-computing, healthcare, and predictive maintenance challenges.
                             </p>
 
-                            <div className="grid grid-cols-1 gap-12">
-                                {[
+                            <PublicationsScrollContainer
+                                publications={[
                                     {
-                                        id: 3,
+                                        id: "patent-edge-anomaly",
                                         title: "Low-Power Real-Time Video Anomaly Detection on Edge",
                                         badge: "INDIAN PATENT APPLICATION",
-                                        desc: "Filed as Co-Inventor with MSRIT · Application No. 202641084253 · Filed 09 Jul 2026",
-                                        abstract: "Patent application for a low-power real-time video anomaly detection architecture operating on edge devices. Designed to deliver high throughput and instant alert generation with minimal power consumption on resource-constrained embedded systems.",
+                                        desc: "Filed as Co-Inventor with MSRIT (App No. 202641084253 · Filed 09 Jul 2026). Patent application for a low-power real-time video anomaly detection architecture operating on edge devices to deliver high throughput with minimal power consumption.",
                                         video: "/9.mp4",
-                                        color: "cyan",
-                                        reversed: false
+                                        href: "mailto:priya6780@gmail.com?subject=Inquiry: Low-Power Real-Time Video Anomaly Detection on Edge",
                                     },
                                     {
-                                        id: 1,
+                                        id: "icefeet-pulmonary-hypertension",
                                         title: "Hybrid Intelligence Learning Architecture for Pulmonary Hypertension Diagnosis",
                                         badge: "ICEFEET 2026 — Under Review",
-                                        desc: "A novel architectural approach utilizing hybrid intelligence to accurately and efficiently diagnose pulmonary hypertension from complex medical datasets.",
-                                        abstract: "Pulmonary Hypertension (PH) is a progressive and severe heart disease that needs to be diagnosed early for successful treatment. However, the current gold standard diagnostic technique, Right Heart Catheterization, is invasive, expensive, and painful for patients. Most of the current computer-aided diagnosis systems based on CT images are single-model deep learning solutions, inadequately validated, and may be restricted to binary classification tasks. This work aims to develop a non-invasive, multi-model deep learning solution for the diagnosis and classification of various PH types from CT images. It combines the strengths of Multi-Class Classification, advanced deep learning models like DenseNet. It was trained using 5-fold cross validation. Grad-CAM++ is used to improve interpretability by pointing out key CT image regions, which is helpful for sound decision-making.",
+                                        desc: "Non-invasive, multi-model deep learning solution combining DenseNet and Grad-CAM++ for early diagnosis and classification of pulmonary hypertension from CT images.",
                                         video: "/4.mp4",
-                                        color: "blue",
-                                        reversed: true
+                                        href: "mailto:priya6780@gmail.com?subject=Inquiry: Hybrid Intelligence Learning Architecture",
                                     },
                                     {
-                                        id: 2,
-                                        title: "Scalable Fault Detection in Aircraft Engines via Sequence Modeling and Attention-Based Autoencoding",
+                                        id: "icaihc-aircraft-engine-faults",
+                                        title: "Scalable Fault Detection in Aircraft Engines via Sequence Modeling & Attention Autoencoding",
                                         badge: "ICAIHC 2026 — Under Review",
-                                        desc: "Advanced deep learning framework analyzing time-series sensor data to predict remaining useful life and classify engine faults before they occur.",
-                                        abstract: "Anomaly detection in turbofan engine predictive maintenance is key to achieving safe and efficient operations in flight activities. Although contemporary approaches to predictive maintenance employ single-model structures to perform anomaly detection and estimate Remaining Useful Life (RUL), their effectiveness remains constrained by noisy sensor readings and complex degradation dynamics. In this paper, we propose a new architecture of the Learned Fusion Autoencoder Ensemble and Interpretability Transformer for turbofan engine anomaly detection and RUL prediction. We start by obtaining a reliable index of engine condition based on Principal Component Analysis (PCA) applied to smoothed sensor readings. For anomaly detection purposes, four reconstruction errors obtained from diverse autoencoders (LSTM, Dense, CNN, Transformer) are fused via a meta classifier. The Transformer regressor is applied alongside and provides an interpretable model due to explicitly obtained self-attention weights, thus facilitating an understanding of engine condition deterioration. Our methodology yields the best known results in F1-score terms and competitive results in RMSE for the benchmark NASA CMAPSS FD001 dataset.",
+                                        desc: "Learned Fusion Autoencoder Ensemble and Interpretability Transformer for turbofan engine anomaly detection and RUL prediction benchmarked on NASA CMAPSS dataset.",
                                         video: "/5.mp4",
-                                        color: "cyan",
-                                        reversed: false
-                                    }
-                                ].map((pub) => (
-                                    <motion.div key={pub.id} variants={slideUp}>
-                                        <Card className={`bg-[#12161F] border-white/10 overflow-hidden group hover:border-${pub.color}-500/50 transition-all duration-500 flex flex-col ${pub.reversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} min-h-[400px]`}>
-                                            <div className={`w-full lg:w-[45%] shrink-0 ${pub.reversed ? 'border-l' : 'border-r'} border-white/10 relative overflow-hidden h-48 lg:h-[320px]`}>
-                                                <video src={pub.video} autoPlay muted loop playsInline className="w-full h-full object-cover" />
-                                            </div>
-                                            <div className="p-8 md:p-12 flex flex-col justify-center flex-grow">
-                                                <Badge variant="outline" className={`w-fit mb-6 bg-${pub.color}-500/10 text-${pub.color}-400 border-${pub.color}-500/20 text-sm px-3 py-1`}>
-                                                    {pub.badge}
-                                                </Badge>
-                                                <h3 className={`text-2xl md:text-3xl font-bold text-white mb-4 leading-tight group-hover:text-${pub.color}-400 transition-colors`}>
-                                                    {pub.title}
-                                                </h3>
-                                                <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                                                    {pub.desc}
-                                                </p>
-
-                                                <motion.div
-                                                    initial={false}
-                                                    animate={{ height: expandedPub === pub.id ? "auto" : 0, opacity: expandedPub === pub.id ? 1 : 0 }}
-                                                    className="overflow-hidden"
-                                                >
-                                                    <div className="pb-8 text-slate-300 leading-relaxed border-t border-white/5 pt-6 mt-2">
-                                                        <h4 className="text-sm font-medium uppercase tracking-wider text-cyan-400 mb-3">Abstract / Details</h4>
-                                                        {pub.abstract}
-                                                    </div>
-                                                </motion.div>
-
-                                                <div className="flex flex-wrap gap-3 mt-auto">
-                                                    <Button
-                                                        variant="outline"
-                                                        onClick={() => setExpandedPub(expandedPub === pub.id ? null : pub.id)}
-                                                        className={`w-fit border-${pub.color}-500/30 hover:bg-${pub.color}-500/10 text-${pub.color}-400 font-bold gap-2`}
-                                                    >
-                                                        {expandedPub === pub.id ? "Hide Details" : "View Details"} <FileText className="w-4 h-4" />
-                                                    </Button>
-                                                    <Button variant="outline" asChild className="w-fit border-white/10 hover:bg-white/5 text-slate-300 font-medium gap-2">
-                                                        <a href={`mailto:priya6780@gmail.com?subject=Inquiry: ${pub.title}`}>
-                                                            Inquire <Mail className="w-4 h-4" />
-                                                        </a>
-                                                    </Button>
-                                                </div>
-                                            </div>
-                                        </Card>
-                                    </motion.div>
-                                ))}
-                            </div>
+                                        href: "mailto:priya6780@gmail.com?subject=Inquiry: Scalable Fault Detection in Aircraft Engines",
+                                    },
+                                ]}
+                            />
                         </motion.div>
                     </section>
 
@@ -447,7 +397,7 @@ export default function Portfolio() {
 
                                         <ul className="list-disc list-outside space-y-3 text-slate-300 text-sm md:text-base leading-relaxed pl-5 mt-2 flex-grow">
                                             <li>
-                                                Developed an LLM-powered Retrieval-Augmented Generation (RAG) chatbot for intelligent question answering over business documents, using LangChain, LangGraph, document chunking, embeddings, semantic retrieval, and prompt engineering.
+                                                Developed an LLM-powered Retrieval-Augmented Generation (RAG) chatbot for intelligent question answering over business documents.
                                             </li>
                                             <li>
                                                 Participated in an industrial visit to BHEL, gaining practical exposure to large-scale manufacturing processes, industrial automation, engineering systems, production workflows, and plant operations.
@@ -497,111 +447,145 @@ export default function Portfolio() {
                     </section>
 
                     {/* Projects Section */}
-                    <section id="projects" className="min-h-[80vh] flex items-center py-20 overflow-hidden">
-                        <motion.div
-                            className="max-w-7xl mx-auto px-6"
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, margin: "-200px" }}
-                            variants={slideInLeft}
-                        >
-                            <div className="flex items-center gap-4 mb-12">
+                    <section id="projects" className="py-24 overflow-hidden relative">
+                        <div className="max-w-7xl mx-auto px-6">
+                            <div className="flex items-center gap-4 mb-16">
                                 <h2 className="text-3xl md:text-5xl font-bold text-white">Projects</h2>
-                                <div className="flex-grow h-[1px] bg-gradient-to-r from-blue-500/50 to-transparent ml-4" />
+                                <div className="flex-grow h-[1px] bg-gradient-to-r from-cyan-500/50 to-transparent ml-4" />
                             </div>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                                {/* Project 1 */}
-                                <motion.div variants={slideUp} whileHover={{ y: -8, transition: { duration: 0.25 } }} className="h-full">
-                                    <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:shadow-[0_24px_48px_rgba(6,182,212,0.18)] hover:border-cyan-500/40 transition-all duration-500 h-full flex flex-col rounded-3xl min-h-[500px]">
-                                        <div className="relative h-64 shrink-0">
-                                            <video src="/1.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover border-b border-white/10" />
-                                        </div>
-                                        <CardHeader className="flex-grow pt-8">
-                                            <CardTitle className="text-2xl text-white group-hover:text-cyan-400 transition-colors">Tourist Recommendation System</CardTitle>
-                                            <CardDescription className="text-muted-foreground mt-4 text-lg">
-                                                Developed a real-time recommendation system achieving <span className="text-cyan-400 font-medium">94% accuracy</span> in user-preference matching using custom decision tree heuristics.
-                                            </CardDescription>
-                                        </CardHeader>
-                                        <CardContent className="pb-8 mt-auto flex flex-col gap-6">
-                                            <div className="flex flex-wrap gap-2">
-                                                {["Flask", "JavaScript", "Decision Tree", "OpenStreetMap API"].map(tag => (
-                                                    <Badge key={tag} variant="outline" className="border-white/10 bg-white/5 text-slate-300 px-3 py-1">{tag}</Badge>
-                                                ))}
-                                            </div>
-                                            <div className="flex gap-3">
-                                                <Button variant="outline" size="sm" asChild className="flex-1 border-white/10 hover:bg-white/5 text-white gap-2">
-                                                    <a href="https://github.com/Priya67803/tourist_recommender.git" target="_blank" rel="noopener noreferrer"><Github className="w-4 h-4" /> GitHub</a>
-                                                </Button>
-                                                <Button size="sm" asChild className="flex-1 bg-cyan-600 hover:bg-cyan-500 text-white gap-2">
-                                                    <a href="https://tourist-recommender.onrender.com" target="_blank" rel="noopener noreferrer"><ExternalLink className="w-4 h-4" /> Demo</a>
-                                                </Button>
-                                            </div>
-                                        </CardContent>
-                                    </Card>
-                                </motion.div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+                                {[
+                                    {
+                                        id: "tourist-recommender",
+                                        title: "Tourist Recommendation System",
+                                        desc: "Developed a real-time recommendation system achieving 94% accuracy in user-preference matching using custom decision tree heuristics.",
+                                        video: "/1.mp4",
+                                        tags: ["Flask", "JavaScript", "Decision Tree", "OpenStreetMap API"],
+                                        github: "https://github.com/Priya67803/tourist_recommender.git",
+                                        demo: "https://tourist-recommender.onrender.com",
+                                    },
+                                    {
+                                        id: "nlp-bias",
+                                        title: "NLP Language & Bias Detection",
+                                        desc: "Built a high-performance NLP dashboard that reduced latency by 20% while detecting nuanced linguistic biases in real-time.",
+                                        video: "/2.mp4",
+                                        tags: ["FastText", "VADER", "TextStat", "NLP"],
+                                        github: "https://github.com/Priya67803/NLP_.git",
+                                        demo: "#",
+                                    },
+                                    {
+                                        id: "graph-rag",
+                                        title: "Multi-Modal Graph RAG for Driver Safety",
+                                        desc: "Architected a multi-modal Graph RAG system integrating telemetry and spatial analysis to enable context-aware driver safety monitoring and risk prediction.",
+                                        video: "/3.mp4",
+                                        tags: ["Graph RAG", "Multi-Modal", "AI", "Safety"],
+                                        github: "https://github.com/Priya67803/RAG.git",
+                                        demo: "https://rag-six-rho.vercel.app",
+                                    },
+                                    {
+                                        id: "smart-interview-agent",
+                                        title: "Smart Interview Preparation Agent",
+                                        desc: "Developed an LLM-powered agent for dynamic question generation, interview evaluation, and performance tracking using Python, OpenAI API, Activepieces, prompt engineering, and REST APIs.",
+                                        video: "/10.mp4",
+                                        tags: ["Python", "OpenAI API", "Activepieces", "Prompt Engineering", "REST APIs"],
+                                        github: "https://github.com/Priya67803/smart-interview-agent",
+                                        demo: "https://interview-agent.vercel.app",
+                                    },
+                                ].map((project, i) => {
+                                    return (
+                                        <motion.div
+                                            key={project.id}
+                                            className="relative group min-h-[520px] flex flex-col"
+                                            initial="offscreen"
+                                            whileInView="onscreen"
+                                            viewport={{ amount: 0.3, once: true }}
+                                            variants={{
+                                                offscreen: {
+                                                    y: 200,
+                                                    opacity: 0,
+                                                },
+                                                onscreen: {
+                                                    y: 0,
+                                                    rotate: i % 2 === 0 ? -3 : 3,
+                                                    opacity: 1,
+                                                    transition: {
+                                                        type: "spring",
+                                                        bounce: 0.4,
+                                                        duration: 0.8,
+                                                    },
+                                                },
+                                            }}
+                                            whileHover={{
+                                                rotate: 0,
+                                                scale: 1.02,
+                                                y: -8,
+                                                transition: { duration: 0.3 }
+                                            }}
+                                        >
+                                            {/* Main Clean Card without background color glows */}
+                                            <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:border-cyan-500/40 transition-all duration-500 h-full flex flex-col rounded-3xl min-h-[520px]">
+                                                {/* Video Header */}
+                                                <div className="relative h-64 shrink-0 overflow-hidden bg-black/40">
+                                                    <video
+                                                        src={project.video}
+                                                        autoPlay
+                                                        muted
+                                                        loop
+                                                        playsInline
+                                                        className="w-full h-full object-cover border-b border-white/10 group-hover:scale-105 transition-transform duration-700"
+                                                    />
+                                                </div>
 
-                                {/* Project 2 */}
-                                <motion.div variants={slideUp} whileHover={{ y: -8, transition: { duration: 0.25 } }} className="h-full">
-                                    <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:shadow-[0_24px_48px_rgba(59,130,246,0.18)] hover:border-blue-500/40 transition-all duration-500 h-full flex flex-col rounded-3xl min-h-[500px]">
-                                        <div className="relative h-64 shrink-0">
-                                            <video src="/2.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover border-b border-white/10" />
-                                        </div>
-                                        <CardHeader className="flex-grow pt-8">
-                                            <CardTitle className="text-2xl text-white group-hover:text-blue-400 transition-colors">NLP Language & Bias Detection</CardTitle>
-                                            <CardDescription className="text-muted-foreground mt-4 text-lg">
-                                                Built a high-performance NLP dashboard that <span className="text-blue-400 font-medium">reduced latency by 20%</span> while detecting nuanced linguistic biases in real-time.
-                                            </CardDescription>
-                                        </CardHeader>
-                                        <CardContent className="pb-8 mt-auto flex flex-col gap-6">
-                                            <div className="flex flex-wrap gap-2">
-                                                {["FastText", "VADER", "TextStat", "NLP"].map(tag => (
-                                                    <Badge key={tag} variant="outline" className="border-white/10 bg-white/5 text-slate-300 px-3 py-1">{tag}</Badge>
-                                                ))}
-                                            </div>
-                                            <div className="flex gap-3">
-                                                <Button variant="outline" size="sm" asChild className="flex-1 border-white/10 hover:bg-white/5 text-white gap-2">
-                                                    <a href="https://github.com/Priya67803/NLP_.git" target="_blank" rel="noopener noreferrer"><Github className="w-4 h-4" /> GitHub</a>
-                                                </Button>
-                                                <Button size="sm" asChild className="flex-1 bg-blue-600 hover:bg-blue-500 text-white gap-2">
-                                                    <a href="#" target="_blank" rel="noopener noreferrer"><ExternalLink className="w-4 h-4" /> Demo</a>
-                                                </Button>
-                                            </div>
-                                        </CardContent>
-                                    </Card>
-                                </motion.div>
+                                                <CardHeader className="flex-grow pt-6 px-8">
+                                                    <CardTitle className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors leading-tight">
+                                                        {project.title}
+                                                    </CardTitle>
+                                                    <CardDescription className="text-slate-300 mt-4 text-base leading-relaxed">
+                                                        {project.desc}
+                                                    </CardDescription>
+                                                </CardHeader>
 
-                                {/* Project 3 */}
-                                <motion.div variants={slideUp} whileHover={{ y: -8, transition: { duration: 0.25 } }} className="h-full">
-                                    <Card className="bg-[#12161F] border-white/10 overflow-hidden group hover:shadow-[0_24px_48px_rgba(168,85,247,0.18)] hover:border-cyan-500/40 transition-all duration-500 h-full flex flex-col rounded-3xl min-h-[500px]">
-                                        <div className="relative h-64 shrink-0">
-                                            <video src="/3.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover border-b border-white/10" />
-                                        </div>
-                                        <CardHeader className="flex-grow pt-8">
-                                            <CardTitle className="text-2xl text-white group-hover:text-cyan-400 transition-colors">Multi-Modal Graph RAG for Intelligent Driver Safety Monitoring</CardTitle>
-                                            <CardDescription className="text-muted-foreground mt-4 text-lg line-clamp-3">
-                                                Architected a multi-modal Graph RAG system integrating telemetry and spatial analysis to enable context-aware driver safety monitoring and risk prediction.
-                                            </CardDescription>
-                                        </CardHeader>
-                                        <CardContent className="pb-8 mt-auto flex flex-col gap-6">
-                                            <div className="flex flex-wrap gap-2">
-                                                {["Graph RAG", "Multi-Modal", "AI", "Safety"].map(tag => (
-                                                    <Badge key={tag} variant="outline" className="border-white/10 bg-white/5 text-slate-300 px-3 py-1">{tag}</Badge>
-                                                ))}
-                                            </div>
-                                            <div className="flex gap-3">
-                                                <Button variant="outline" size="sm" asChild className="flex-1 border-white/10 hover:bg-white/5 text-white gap-2">
-                                                    <a href="https://github.com/Priya67803/RAG.git" target="_blank" rel="noopener noreferrer"><Github className="w-4 h-4" /> GitHub</a>
-                                                </Button>
-                                                <Button size="sm" asChild className="flex-1 bg-cyan-600 hover:bg-cyan-500 text-white gap-2">
-                                                    <a href="https://rag-six-rho.vercel.app" target="_blank" rel="noopener noreferrer"><ExternalLink className="w-4 h-4" /> Demo</a>
-                                                </Button>
-                                            </div>
-                                        </CardContent>
-                                    </Card>
-                                </motion.div>
+                                                <CardContent className="pb-8 px-8 mt-auto flex flex-col gap-6">
+                                                    <div className="flex flex-wrap gap-2">
+                                                        {project.tags.map((tag) => (
+                                                            <Badge
+                                                                key={tag}
+                                                                variant="outline"
+                                                                className="border-white/10 bg-white/5 text-slate-300 px-3 py-1 text-xs font-medium"
+                                                            >
+                                                                {tag}
+                                                            </Badge>
+                                                        ))}
+                                                    </div>
+                                                    <div className="flex gap-3">
+                                                        <Button
+                                                            variant="outline"
+                                                            size="sm"
+                                                            asChild
+                                                            className="flex-1 border-white/10 hover:bg-white/10 text-white gap-2"
+                                                        >
+                                                            <a href={project.github} target="_blank" rel="noopener noreferrer">
+                                                                <Github className="w-4 h-4" /> GitHub
+                                                            </a>
+                                                        </Button>
+                                                        <Button
+                                                            size="sm"
+                                                            asChild
+                                                            className="flex-1 bg-cyan-600 hover:bg-cyan-500 text-white gap-2 font-medium"
+                                                        >
+                                                            <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                                                                <ExternalLink className="w-4 h-4" /> Demo
+                                                            </a>
+                                                        </Button>
+                                                    </div>
+                                                </CardContent>
+                                            </Card>
+                                        </motion.div>
+                                    );
+                                })}
                             </div>
-                        </motion.div>
+                        </div>
                     </section>
 
                     {/* Experience and Skills (Technical Arsenal) */}
@@ -679,7 +663,7 @@ export default function Portfolio() {
                                 <motion.div variants={slideInRight} className="bg-[#12161F]/50 p-6 rounded-[2rem] border border-white/5 hover:border-white/10 transition-all mb-6">
                                     <h3 className="text-xl font-bold text-white mb-2">B.E. Computer Science (AI and ML)</h3>
                                     <p className="text-cyan-400 font-medium mb-2">M. S. Ramaiah Institute of Technology</p>
-                                    <p className="text-slate-500 text-sm">6th Semester (2024–2027)</p>
+                                    <p className="text-slate-500 text-sm">7th Semester (2024–2027)</p>
                                 </motion.div>
 
                                 <motion.div variants={slideInRight} className="bg-[#12161F]/50 p-8 rounded-[2rem] border border-white/5 hover:border-white/10 transition-all mb-8">
