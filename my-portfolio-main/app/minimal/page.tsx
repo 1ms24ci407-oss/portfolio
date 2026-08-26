@@ -216,7 +216,7 @@ export default function Portfolio() {
                             animate="visible"
                             variants={staggerContainer}
                         >
-                            {/* Text ΓÇö left side */}
+                            {/* Text - left side */}
                             <motion.div variants={staggerContainer} className="flex flex-col items-start text-left flex-1 min-w-0">
                                 <motion.div variants={fadeInUp}>
                                     <div className="inline-flex items-center gap-1.5 mb-4 md:mb-8 glass px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-cyan-500/30 animate-breathe shadow-[0_0_20px_rgba(6,182,212,0.3)]">
@@ -256,7 +256,7 @@ export default function Portfolio() {
                                 </motion.div>
                             </motion.div>
 
-                            {/* Profile image ΓÇö right side, smaller on mobile */}
+                            {/* Profile image - right side, smaller on mobile */}
                             <motion.div variants={fadeInUp} className="relative flex justify-center items-center w-[148px] sm:w-[200px] md:w-[280px] lg:w-[340px] shrink-0">
                                 <div className="relative w-full aspect-[4/5] rounded-[1.25rem] sm:rounded-[2rem] md:rounded-[2.5rem] lg:rounded-[3rem] overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(6,182,212,0.15)] glass group">
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#0B0E14] via-transparent to-transparent z-10 pointer-events-none opacity-40" />
@@ -326,14 +326,14 @@ export default function Portfolio() {
                                         id: "patent-edge-anomaly",
                                         title: "Low-Power Real-Time Video Anomaly Detection on Edge",
                                         badge: "INDIAN PATENT APPLICATION",
-                                        desc: "Filed as Co-Inventor with MSRIT (App No. 202641084253 ┬╖ Filed 09 Jul 2026). Patent application for a low-power real-time video anomaly detection architecture operating on edge devices to deliver high throughput with minimal power consumption.",
+                                        desc: "Filed as Co-Inventor with MSRIT (App No. 202641084253 - Filed 09 Jul 2026). Patent application for a low-power real-time video anomaly detection architecture operating on edge devices to deliver high throughput with minimal power consumption.",
                                         video: "/9.mp4",
                                         href: "mailto:priya6780@gmail.com?subject=Inquiry: Low-Power Real-Time Video Anomaly Detection on Edge",
                                     },
                                     {
                                         id: "icefeet-pulmonary-hypertension",
                                         title: "Hybrid Intelligence Learning Architecture for Pulmonary Hypertension Diagnosis",
-                                        badge: "ICEFEET 2026 ΓÇö Under Review",
+                                        badge: "ICEFEET 2026 - Under Review",
                                         desc: "Non-invasive, multi-model deep learning solution combining DenseNet and Grad-CAM++ for early diagnosis and classification of pulmonary hypertension from CT images.",
                                         video: "/4.mp4",
                                         href: "mailto:priya6780@gmail.com?subject=Inquiry: Hybrid Intelligence Learning Architecture",
@@ -341,7 +341,7 @@ export default function Portfolio() {
                                     {
                                         id: "icaihc-aircraft-engine-faults",
                                         title: "Scalable Fault Detection in Aircraft Engines via Sequence Modeling & Attention Autoencoding",
-                                        badge: "ICAIHC 2026 ΓÇö Under Review",
+                                        badge: "ICAIHC 2026 - Under Review",
                                         desc: "Learned Fusion Autoencoder Ensemble and Interpretability Transformer for turbofan engine anomaly detection and RUL prediction benchmarked on NASA CMAPSS dataset.",
                                         video: "/5.mp4",
                                         href: "mailto:priya6780@gmail.com?subject=Inquiry: Scalable Fault Detection in Aircraft Engines",
@@ -392,7 +392,7 @@ export default function Portfolio() {
                                         </div>
 
                                         <div className="text-cyan-400/90 text-sm font-medium mb-6 flex items-center gap-2">
-                                            <span>July 2026 ΓÇô Aug 2026</span>
+                                            <span>July 2026 - Aug 2026</span>
                                         </div>
 
                                         <ul className="list-disc list-outside space-y-3 text-slate-300 text-sm md:text-base leading-relaxed pl-5 mt-2 flex-grow">
@@ -429,7 +429,7 @@ export default function Portfolio() {
                                         </div>
 
                                         <div className="text-cyan-400/90 text-sm font-medium mb-6 flex items-center gap-2">
-                                            <span>Jan 2024 ΓÇô Apr 2024</span>
+                                            <span>Jan 2024 - Apr 2024</span>
                                         </div>
 
                                         <ul className="list-disc list-outside space-y-3 text-slate-300 text-sm md:text-base leading-relaxed pl-5 mt-2 flex-grow">
@@ -663,13 +663,13 @@ export default function Portfolio() {
                                 <motion.div variants={slideInRight} className="bg-[#12161F]/50 p-6 rounded-[2rem] border border-white/5 hover:border-white/10 transition-all mb-6">
                                     <h3 className="text-xl font-bold text-white mb-2">B.E. Computer Science (AI and ML)</h3>
                                     <p className="text-cyan-400 font-medium mb-2">M. S. Ramaiah Institute of Technology</p>
-                                    <p className="text-slate-500 text-sm">7th Semester (2024ΓÇô2027)</p>
+                                    <p className="text-slate-500 text-sm">7th Semester (2024-2027)</p>
                                 </motion.div>
 
                                 <motion.div variants={slideInRight} className="bg-[#12161F]/50 p-8 rounded-[2rem] border border-white/5 hover:border-white/10 transition-all mb-8">
                                     <h3 className="text-xl font-bold text-white mb-2">Diploma in Computer Science</h3>
                                     <p className="text-muted-foreground font-medium mb-2">MEI Polytechnic, Bengaluru</p>
-                                    <p className="text-slate-500 text-sm">2021ΓÇô2024</p>
+                                    <p className="text-slate-500 text-sm">2021-2024</p>
                                 </motion.div>
 
                                 <motion.div variants={slideInRight}>
@@ -678,13 +678,13 @@ export default function Portfolio() {
                                     </h3>
                                     <ul className="grid sm:grid-cols-2 gap-4">
                                         {[
-                                            { name: "Internship Certification ΓÇö Razz Security", link: "/internship%20certificate.pdf" },
-                                            { name: "AWS Academy ΓÇö ML Foundations", link: "/AWS_Academy_Graduate___Machine_Learning_Foundations___Training_Badge_Badge20251110-30-ja54zf.pdf" },
-                                            { name: "Generative AI Leader ΓÇö Google Cloud", link: "/Gen ai.pdf" },
-                                            { name: "Deep Learning ΓÇö Google Cloud", link: "/deep learning.pdf" },
-                                            { name: "Ethical Hacking ΓÇö Udemy", link: "/Ethical hacking.pdf" },
-                                            { name: "Machine Learning ΓÇö Infosys", link: "/ML certificate.pdf" },
-                                            { name: "Snowflake ΓÇö Data Warehousing", link: "/snowflake.pdf" }
+                                            { name: "Internship Certification - Razz Security", link: "/internship%20certificate.pdf" },
+                                            { name: "AWS Academy - ML Foundations", link: "/AWS_Academy_Graduate___Machine_Learning_Foundations___Training_Badge_Badge20251110-30-ja54zf.pdf" },
+                                            { name: "Generative AI Leader - Google Cloud", link: "/Gen ai.pdf" },
+                                            { name: "Deep Learning - Google Cloud", link: "/deep learning.pdf" },
+                                            { name: "Ethical Hacking - Udemy", link: "/Ethical hacking.pdf" },
+                                            { name: "Machine Learning - Infosys", link: "/ML certificate.pdf" },
+                                            { name: "Snowflake - Data Warehousing", link: "/snowflake.pdf" }
                                         ].map((cert, i) => (
                                             <li key={i}>
                                                 <a
@@ -880,7 +880,7 @@ export default function Portfolio() {
                                 Designed and developed with passion for Artificial Intelligence and Innovation.
                             </p>
                             <p className="text-muted-foreground/80 text-xs font-normal">
-                                ┬⌐ 2026 Priyadarshini V. All rights reserved.
+                                © 2026 Priyadarshini V. All rights reserved.
                             </p>
                         </div>
                     </div>
