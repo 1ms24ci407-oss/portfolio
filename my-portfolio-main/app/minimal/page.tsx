@@ -493,8 +493,7 @@ export default function Portfolio() {
                                         desc: "Developed an LLM-powered agent for dynamic question generation, interview evaluation, and performance tracking using Python, OpenAI API, Activepieces, prompt engineering, and REST APIs.",
                                         video: "/10.mp4",
                                         tags: ["Python", "OpenAI API", "Activepieces", "Prompt Engineering", "REST APIs"],
-                                        github: "https://github.com/Priya67803/smart-interview-agent",
-                                        demo: "https://interview-agent.vercel.app",
+                                        demo: "https://drive.google.com/file/d/1qpdj-66h65kh2-57zbtjUAO5_1FICSdo/view",
                                     },
                                 ].map((project, i) => {
                                     return (
@@ -537,11 +536,11 @@ export default function Portfolio() {
                                                         muted
                                                         loop
                                                         playsInline
-                                                        className="w-full h-full object-cover border-b border-white/10 group-hover:scale-105 transition-transform duration-700"
+                                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                                     />
                                                 </div>
 
-                                                <CardHeader className="flex-grow pt-6 px-8">
+                                                <CardHeader className="pt-8 px-8 flex-grow">
                                                     <CardTitle className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors leading-tight">
                                                         {project.title}
                                                     </CardTitle>
@@ -563,25 +562,29 @@ export default function Portfolio() {
                                                         ))}
                                                     </div>
                                                     <div className="flex gap-3">
-                                                        <Button
-                                                            variant="outline"
-                                                            size="sm"
-                                                            asChild
-                                                            className="flex-1 border-white/10 hover:bg-white/10 text-white gap-2"
-                                                        >
-                                                            <a href={project.github} target="_blank" rel="noopener noreferrer">
-                                                                <Github className="w-4 h-4" /> GitHub
-                                                            </a>
-                                                        </Button>
-                                                        <Button
-                                                            size="sm"
-                                                            asChild
-                                                            className="flex-1 bg-cyan-600 hover:bg-cyan-500 text-white gap-2 font-medium"
-                                                        >
-                                                            <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                                                                <ExternalLink className="w-4 h-4" /> Demo
-                                                            </a>
-                                                        </Button>
+                                                        {project.github && (
+                                                            <Button
+                                                                variant="outline"
+                                                                size="sm"
+                                                                asChild
+                                                                className="flex-1 border-white/10 hover:bg-white/10 text-white gap-2"
+                                                            >
+                                                                <a href={project.github} target="_blank" rel="noopener noreferrer">
+                                                                    <Github className="w-4 h-4" /> GitHub
+                                                                </a>
+                                                            </Button>
+                                                        )}
+                                                        {project.demo && (
+                                                            <Button
+                                                                size="sm"
+                                                                asChild
+                                                                className="flex-1 bg-cyan-600 hover:bg-cyan-500 text-white gap-2 font-medium"
+                                                            >
+                                                                <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                                                                    <ExternalLink className="w-4 h-4" /> Demo
+                                                                </a>
+                                                            </Button>
+                                                        )}
                                                     </div>
                                                 </CardContent>
                                             </Card>
