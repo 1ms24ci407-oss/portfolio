@@ -54,6 +54,8 @@ export type PublicationItem = {
   desc: string;
   video: string;
   href: string;
+  github?: string;
+  demo?: string;
 };
 
 export function PublicationsScrollContainer({
@@ -98,7 +100,7 @@ export function PublicationsScrollContainer({
         {publications.map((pub) => (
           <li
             key={pub.id}
-            className="snap-center shrink-0 w-[340px] md:w-[480px] bg-[#12161F] border border-white/10 rounded-3xl overflow-hidden flex flex-col group hover:border-cyan-500/50 transition-all duration-500 shadow-2xl min-h-[460px]"
+            className="snap-center shrink-0 w-[340px] md:w-[480px] bg-[#12161F] border border-white/10 rounded-3xl overflow-hidden flex flex-col group hover:border-cyan-500/50 transition-all duration-500 shadow-2xl min-h-[480px]"
           >
             {/* Video Header */}
             <div className="relative h-60 w-full overflow-hidden border-b border-white/10 bg-black/40">
@@ -131,9 +133,33 @@ export function PublicationsScrollContainer({
                 </p>
               </div>
 
-              <div className="mt-auto pt-4 border-t border-white/5 flex items-center justify-between">
+              <div className="mt-auto pt-4 border-t border-white/5 flex flex-wrap gap-3">
+                {pub.github && (
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    asChild
+                    className="border-white/10 hover:bg-white/10 text-white gap-2"
+                  >
+                    <a href={pub.github} target="_blank" rel="noopener noreferrer">
+                      GitHub
+                    </a>
+                  </Button>
+                )}
+                {pub.demo && (
+                  <Button
+                    size="sm"
+                    asChild
+                    className="bg-cyan-600 hover:bg-cyan-500 text-white gap-2 font-medium"
+                  >
+                    <a href={pub.demo} target="_blank" rel="noopener noreferrer">
+                      Demo
+                    </a>
+                  </Button>
+                )}
                 <Button
                   variant="outline"
+                  size="sm"
                   asChild
                   className="border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/10 font-bold gap-2"
                 >

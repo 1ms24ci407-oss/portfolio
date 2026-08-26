@@ -336,6 +336,8 @@ export default function Portfolio() {
                                         badge: "ICEFEET 2026 - Under Review",
                                         desc: "Non-invasive, multi-model deep learning solution combining DenseNet and Grad-CAM++ for early diagnosis and classification of pulmonary hypertension from CT images.",
                                         video: "/4.mp4",
+                                        github: "https://github.com/Priya67803/PH-CT_AI_Dashboard",
+                                        demo: "https://ph-ct-ai-dashboard.onrender.com/",
                                         href: "mailto:www.priya6780@gmail.com?subject=Inquiry: Hybrid Intelligence Learning Architecture",
                                     },
                                     {
