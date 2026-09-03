@@ -211,13 +211,13 @@ export default function Portfolio() {
                     {/* Hero Section */}
                     <section id="home" className="min-h-[90vh] flex items-center overflow-hidden pt-20 md:pt-24 pb-12">
                         <motion.div
-                            className="max-w-7xl mx-auto px-4 sm:px-6 w-full flex flex-row items-center justify-between gap-3 sm:gap-6 md:gap-12"
+                            className="max-w-7xl mx-auto px-4 sm:px-6 w-full flex flex-row items-center justify-between gap-4 sm:gap-6 md:gap-12"
                             initial="hidden"
                             animate="visible"
                             variants={staggerContainer}
                         >
                             {/* Text - left side */}
-                            <motion.div variants={staggerContainer} className="flex flex-col items-start text-left flex-1 min-w-0">
+                            <motion.div variants={staggerContainer} className="flex flex-col items-start text-left flex-1 min-w-0 pr-2 md:pr-0">
                                 <motion.div variants={fadeInUp}>
                                     <div className="inline-flex items-center gap-1.5 mb-4 md:mb-8 glass px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-cyan-500/30 animate-breathe shadow-[0_0_20px_rgba(6,182,212,0.3)]">
                                         <span className="relative flex h-2.5 w-2.5 md:h-3 md:w-3 shrink-0">
@@ -228,12 +228,12 @@ export default function Portfolio() {
                                     </div>
                                 </motion.div>
 
-                                <motion.h1 variants={fadeInUp} className="hero-title font-bold text-white tracking-tight mb-2 md:mb-4 brand-logo">
+                                <motion.h1 variants={fadeInUp} className="text-[22px] sm:text-[28px] leading-[1.1] sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-1 sm:mb-2 md:mb-4 brand-logo whitespace-nowrap">
                                     Priyadarshini V
-                                    <span className="text-gradient font-inter tracking-normal normal-case block hero-title">{typedTitle}<span className="animate-pulse text-cyan-400">|</span></span>
+                                    <span className="text-gradient font-inter tracking-normal normal-case block text-base sm:text-2xl md:text-4xl lg:text-5xl mt-0 sm:mt-1 md:mt-2 whitespace-normal">{typedTitle}<span className="animate-pulse text-cyan-400">|</span></span>
                                 </motion.h1>
 
-                                <motion.p variants={fadeInUp} className="body-text text-muted-foreground max-w-xl mt-2 md:mt-4 font-normal">
+                                <motion.p variants={fadeInUp} className="text-xs sm:text-sm md:text-base lg:text-lg text-muted-foreground max-w-xl mt-2 md:mt-4 font-normal leading-relaxed">
                                     Specializing in deep learning, machine learning, and the development of scalable AI solutions for solving complex industrial and real-world challenges.
                                 </motion.p>
 
@@ -257,7 +257,7 @@ export default function Portfolio() {
                             </motion.div>
 
                             {/* Profile image - right side, smaller on mobile */}
-                            <motion.div variants={fadeInUp} className="relative flex justify-center items-center w-[148px] sm:w-[200px] md:w-[280px] lg:w-[340px] shrink-0">
+                            <motion.div variants={fadeInUp} className="relative flex justify-center items-center w-[120px] sm:w-[160px] md:w-[280px] lg:w-[340px] shrink-0 ml-2 md:ml-0">
                                 <div className="relative w-full aspect-[4/5] rounded-[1.25rem] sm:rounded-[2rem] md:rounded-[2.5rem] lg:rounded-[3rem] overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(6,182,212,0.15)] glass group">
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#0B0E14] via-transparent to-transparent z-10 pointer-events-none opacity-40" />
                                     <div className="absolute -inset-4 bg-cyan-500/20 blur-3xl rounded-full opacity-40 group-hover:opacity-60 transition-opacity duration-500" />
@@ -333,7 +333,7 @@ export default function Portfolio() {
                                     {
                                         id: "icefeet-pulmonary-hypertension",
                                         title: "Hybrid Intelligence Learning Architecture for Pulmonary Hypertension Diagnosis",
-                                        badge: "ICEFEET 2026 - Under Review",
+                                        badge: "ICEFEET 2026 - Accepted",
                                         desc: "Non-invasive, multi-model deep learning solution combining DenseNet and Grad-CAM++ for early diagnosis and classification of pulmonary hypertension from CT images.",
                                         video: "/4.mp4",
                                         github: "https://github.com/Priya67803/PH-CT_AI_Dashboard",
@@ -341,9 +341,9 @@ export default function Portfolio() {
                                         href: "mailto:www.priya6780@gmail.com?subject=Inquiry: Hybrid Intelligence Learning Architecture",
                                     },
                                     {
-                                        id: "icaihc-aircraft-engine-faults",
-                                        title: "Scalable Fault Detection in Aircraft Engines via Sequence Modeling & Attention Autoencoding",
-                                        badge: "ICAIHC 2026 - Under Review",
+                                        id: "icsiit-aircraft-engine-faults",
+                                        title: "Scalable Fault Detection in Aircraft Engines via Sequence Modelling and Attention-Based Autoencoding",
+                                        badge: "IC-SIIT 2026 - Presented, Accepted",
                                         desc: "Learned Fusion Autoencoder Ensemble and Interpretability Transformer for turbofan engine anomaly detection and RUL prediction benchmarked on NASA CMAPSS dataset.",
                                         video: "/5.mp4",
                                         github: "https://github.com/Priya67803/Aircraft_dashboard",

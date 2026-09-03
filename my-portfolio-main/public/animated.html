@@ -42,7 +42,7 @@
     --hue-6: rgba(255, 201, 139, 0.14);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: auto; }
+  html { scroll-behavior: auto; overflow-x: hidden; }
   body {
     font-family: 'Plus Jakarta Sans', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -77,7 +77,7 @@
   /* Background Fixed Canvas */
   .canvas-wrap {
     position: fixed;
-    top: 0; left: 0; width: 100vw; height: 100vh;
+    top: 0; left: 0; width: 100%; height: 100%;
     z-index: 0;
     pointer-events: none;
     overflow: hidden;
@@ -668,7 +668,10 @@
     margin-top: 16px;
   }
   .cert-gallery {
-    display: flex;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-auto-flow: column;
+    grid-auto-columns: 275px;
     gap: 24px;
     will-change: transform;
     padding-bottom: 16px;
@@ -1172,6 +1175,10 @@
   .project-card[data-hue="5"] { background: linear-gradient(135deg, rgba(160, 205, 250, 0.35) 0%, rgba(190, 225, 255, 0.20) 100%); border: 1.5px solid rgba(100, 181, 246, 0.38); border-top: 3px solid #64B5F6; }
   .project-card[data-hue="6"] { background: linear-gradient(135deg, rgba(255, 185, 200, 0.35) 0%, rgba(255, 215, 225, 0.20) 100%); border: 1.5px solid rgba(255, 127, 166, 0.38); border-top: 3px solid #FF7FA6; }
   .project-card[data-hue="7"] { background: linear-gradient(135deg, rgba(200, 180, 240, 0.35) 0%, rgba(220, 200, 250, 0.20) 100%); border: 1.5px solid rgba(184, 164, 217, 0.38); border-top: 3px solid #B8A4D9; }
+  .project-card[data-hue="8"] { background: linear-gradient(135deg, rgba(160, 225, 215, 0.35) 0%, rgba(190, 240, 230, 0.20) 100%); border: 1.5px solid rgba(79, 181, 168, 0.38); border-top: 3px solid #4FB5A8; }
+  .project-card[data-hue="9"] { background: linear-gradient(135deg, rgba(255, 210, 150, 0.35) 0%, rgba(255, 230, 180, 0.20) 100%); border: 1.5px solid rgba(240, 169, 78, 0.38); border-top: 3px solid #F0A94E; }
+  .project-card[data-hue="10"] { background: linear-gradient(135deg, rgba(160, 205, 250, 0.35) 0%, rgba(190, 225, 255, 0.20) 100%); border: 1.5px solid rgba(100, 181, 246, 0.38); border-top: 3px solid #64B5F6; }
+  .project-card[data-hue="11"] { background: linear-gradient(135deg, rgba(255, 185, 200, 0.35) 0%, rgba(255, 215, 225, 0.20) 100%); border: 1.5px solid rgba(255, 127, 166, 0.38); border-top: 3px solid #FF7FA6; }
 
   .proj-card-top {
     display: flex;
@@ -1195,6 +1202,10 @@
   .project-card[data-hue="5"] .proj-icon-badge { background: rgba(100, 181, 246, 0.2); border: 1px solid rgba(100, 181, 246, 0.4); color: #64B5F6; }
   .project-card[data-hue="6"] .proj-icon-badge { background: rgba(255, 127, 166, 0.2); border: 1px solid rgba(255, 127, 166, 0.4); color: #FF7FA6; }
   .project-card[data-hue="7"] .proj-icon-badge { background: rgba(184, 164, 217, 0.2); border: 1px solid rgba(184, 164, 217, 0.4); color: #B8A4D9; }
+  .project-card[data-hue="8"] .proj-icon-badge { background: rgba(79, 181, 168, 0.2); border: 1px solid rgba(79, 181, 168, 0.4); color: #4FB5A8; }
+  .project-card[data-hue="9"] .proj-icon-badge { background: rgba(240, 169, 78, 0.2); border: 1px solid rgba(240, 169, 78, 0.4); color: #F0A94E; }
+  .project-card[data-hue="10"] .proj-icon-badge { background: rgba(100, 181, 246, 0.2); border: 1px solid rgba(100, 181, 246, 0.4); color: #64B5F6; }
+  .project-card[data-hue="11"] .proj-icon-badge { background: rgba(255, 127, 166, 0.2); border: 1px solid rgba(255, 127, 166, 0.4); color: #FF7FA6; }
 
   .proj-num {
     font-family: 'JetBrains Mono', monospace;
@@ -1255,6 +1266,10 @@
   .project-card[data-hue="5"] .proj-link { color: #64B5F6; }
   .project-card[data-hue="6"] .proj-link { color: #FF7FA6; }
   .project-card[data-hue="7"] .proj-link { color: #B8A4D9; }
+  .project-card[data-hue="8"] .proj-link { color: #4FB5A8; }
+  .project-card[data-hue="9"] .proj-link { color: #F0A94E; }
+  .project-card[data-hue="10"] .proj-link { color: #64B5F6; }
+  .project-card[data-hue="11"] .proj-link { color: #FF7FA6; }
 
   .proj-link:hover { transform: translateX(3px); }
 
@@ -1331,8 +1346,8 @@
     border: 1.5px solid rgba(255, 255, 255, 0.16);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border-radius: 28px;
-    padding: 32px;
+    border-radius: 20px;
+    padding: 22px 24px;
     box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.4);
     transform-origin: 10% 60%;
     transform: translateY(140px) rotate(0deg);
@@ -1364,12 +1379,12 @@
   }
 
   .scroll-triggered-card.onscreen {
-    transform: translateY(0px) rotate(-4deg);
+    transform: translateY(0px) rotate(-1.5deg);
     opacity: 1;
     transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.8s ease;
   }
   .scroll-card-wrapper:nth-child(even) .scroll-triggered-card.onscreen {
-    transform: translateY(0px) rotate(4deg);
+    transform: translateY(0px) rotate(1.5deg);
   }
   .scroll-card-wrapper:hover .splash-bg {
     opacity: 0.6;
@@ -1380,18 +1395,18 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 18px;
+    margin-bottom: 12px;
     gap: 12px;
   }
   .res-num-badge {
-    width: 36px;
-    height: 36px;
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 800;
     color: #ffffff;
     flex-shrink: 0;
@@ -1407,12 +1422,12 @@
     flex-wrap: wrap;
   }
   .res-tag-pill {
-    padding: 5px 12px;
-    border-radius: 12px;
+    padding: 4px 10px;
+    border-radius: 10px;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 700;
-    letter-spacing: 0.8px;
+    letter-spacing: 0.6px;
     text-transform: uppercase;
     display: inline-flex;
     align-items: center;
@@ -1423,26 +1438,26 @@
   .scroll-triggered-card[data-hue="3"] .res-tag-pill { background: rgba(240, 169, 78, 0.12); color: #F0A94E; border: 1px solid rgba(240, 169, 78, 0.25); }
 
   .res-card-title {
-    font-size: 1.25rem;
-    font-weight: 800;
+    font-size: 1.12rem;
+    font-weight: 700;
     color: #ffffff;
-    line-height: 1.35;
-    margin-bottom: 12px;
+    line-height: 1.3;
+    margin-bottom: 8px;
   }
   .res-card-desc {
-    font-size: 0.92rem;
+    font-size: 0.88rem;
     color: rgba(255, 255, 255, 0.85);
-    line-height: 1.55;
-    margin-bottom: 20px;
+    line-height: 1.45;
+    margin-bottom: 12px;
   }
   .res-card-meta {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.76rem;
+    font-size: 0.74rem;
     color: #FF7FA6;
-    margin-bottom: 20px;
+    margin-bottom: 14px;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
   }
 
   .res-card-actions {
@@ -1450,6 +1465,7 @@
     align-items: center;
     justify-content: space-between;
     margin-top: auto;
+    padding-top: 6px;
   }
   .res-btn-primary {
     display: inline-flex;
@@ -1825,17 +1841,56 @@
     header { padding: 12px 16px; }
     header.scrolled { padding: 10px 16px; }
     .logo { font-size: 0.95rem; }
-    section.scene-section { padding: 64px 16px; margin-bottom: 16px; }
-    .content-card { padding: 18px 14px; border-radius: 20px; }
-    .content-card.in { clip-path: inset(0% 0% 0% 0%); opacity: 1; transform: translateY(0); }
-    .scroll-triggered-card { padding: 20px 16px; }
-    .scroll-triggered-card.onscreen { transform: translateY(0px) rotate(0deg) !important; }
-    .contact-links { flex-direction: column; width: 100%; gap: 10px; }
-    .contact-link { width: 100%; justify-content: center; text-align: center; word-break: break-word; padding: 12px 16px; font-size: 0.92rem; }
+    
+    /* Hero Section */
+    section.scene-section { padding: 40px 16px; margin-bottom: 16px; }
+    .hero-box h1 { font-size: clamp(2rem, 8vw, 2.5rem); line-height: 1.15; margin-bottom: 12px; }
+    .hero-stats { flex-wrap: wrap; justify-content: center; gap: 8px; }
+    .stat-pill { padding: 6px 12px; font-size: 0.8rem; }
     .hero-cta { flex-direction: column; width: 100%; max-width: 280px; margin: 0 auto; gap: 12px; }
-    .btn { width: 100%; justify-content: center; text-align: center; padding: 10px 20px; }
-    .cert-gallery-item { flex: 0 0 200px; height: 140px; padding: 12px; }
-    footer { padding: 20px 12px; font-size: 0.85rem; }
+    .btn { width: 100%; justify-content: center; text-align: center; padding: 12px 20px; }
+
+    /* About Me */
+    .content-card { padding: 20px 16px; border-radius: 16px; }
+    .content-card p { font-size: 0.95rem; line-height: 1.6; margin-bottom: 12px; }
+    .content-card.in { clip-path: inset(0% 0% 0% 0%); opacity: 1; transform: translateY(0); }
+    .hero-pills-row { flex-direction: column !important; align-items: stretch !important; gap: 16px !important; margin-bottom: 24px !important; }
+    .hero-stat-box { border-right: none !important; padding: 0 !important; width: 100% !important; }
+
+    /* The Road So Far / Timeline */
+    .journey-main-grid { grid-template-columns: 1fr; gap: 24px; }
+    .timeline-stepper-wrap { padding-left: 18px; gap: 16px; }
+    .timeline-vertical-line { left: 8px; }
+    .timeline-icon-node { left: -22px; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; }
+    .node-icon { font-size: 14px; margin: 0; padding: 0; display: inline-block; line-height: 1; }
+    .timeline-connector-line { left: 6px; width: 12px; }
+    .journey-glass-card { padding: 16px; margin-left: 2px; }
+    .journey-title-text { font-size: 1.1rem; line-height: 1.3; margin-bottom: 6px; }
+    .journey-desc-text { font-size: 0.9rem; line-height: 1.4; }
+    .journey-meta-tag, .journey-date-tag { font-size: 0.75rem; padding: 4px 8px; }
+
+    /* Cards (Projects, Research, Toolkit) */
+    .project-card { padding: 16px; border-radius: 16px; }
+    .project-title { font-size: 1.1rem; }
+    .project-desc { font-size: 0.9rem; line-height: 1.4; }
+    
+    .research-scroll-container { grid-template-columns: 1fr; gap: 16px; }
+    .scroll-triggered-card { padding: 16px; border-radius: 16px; }
+    .res-card-title { font-size: 1.05rem; line-height: 1.3; }
+    .res-card-desc { font-size: 0.9rem; line-height: 1.4; }
+    .scroll-triggered-card.onscreen { transform: translateY(0px) rotate(0deg) !important; }
+
+    .cert-gallery { grid-auto-columns: 200px; gap: 12px; }
+    .cert-gallery-item { padding: 12px; border-radius: 12px; }
+
+    .learning-grid { grid-template-columns: 1fr; }
+    
+    /* Contact & Footer */
+    .contact-sec-btns { flex-direction: column !important; gap: 12px !important; }
+    .btn-sec-link { width: 100% !important; justify-content: center !important; }
+    .btn-email-primary { padding: 12px 20px !important; margin-bottom: 16px !important; }
+    .contact-card-glass { padding: 24px 20px 20px !important; }
+    footer { padding: 24px 16px; font-size: 0.8rem; line-height: 1.5; text-align: center; }
   }
 
   /* Continuous learning cards */
@@ -2122,6 +2177,22 @@
               </div>
             </div>
 
+            <!-- Node 4 -->
+            <div class="timeline-step-item" data-hue="teal">
+              <div class="timeline-icon-node teal-node">
+                <span class="node-icon">⚙️</span>
+              </div>
+              <div class="timeline-connector-line"></div>
+              <div class="journey-glass-card teal-card">
+                <div class="journey-card-header">
+                  <div class="journey-date-tag teal-date">July 2026 - Aug 2026</div>
+                  <h3 class="journey-title-text">BHEL Internship</h3>
+                  <div class="journey-meta-tag teal-meta">Bharat Heavy Electricals Limited</div>
+                </div>
+                <p class="journey-desc-text">Industrial training and exposure to enterprise systems and engineering workflows.</p>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -2334,7 +2405,7 @@
               <div class="proj-num">07</div>
             </div>
             <div class="proj-title">RAG-Based PDF Document Chatbot</div>
-            <div class="proj-desc">Built an AI-powered conversational system that uses Retrieval-Augmented Generation (RAG) to retrieve relevant information from PDF documents and provide context-aware answers.</div>
+            <div class="proj-desc">Built an AI-powered conversational system for PDF documents using RAG.</div>
             <div class="proj-tags">
               <span class="proj-tag">RAG</span>
               <span class="proj-tag">PDF Chat</span>
@@ -2349,6 +2420,107 @@
             </a>
             <a href="https://github.com/1ms24ci407-oss/rag-pdf-chat-free" target="_blank" rel="noopener" class="proj-gh-icon" title="View GitHub Repository">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 08: CICD Pipeline -->
+        <div class="project-card" data-hue="8">
+          <div>
+            <div class="proj-card-top">
+              <div class="proj-icon-badge">⚙️</div>
+              <div class="proj-num">08</div>
+            </div>
+            <div class="proj-title">CICD Pipeline</div>
+            <div class="proj-desc">Automated continuous integration and delivery pipeline for cloud applications and microservices.</div>
+            <div class="proj-tags">
+              <span class="proj-tag">CI/CD</span>
+              <span class="proj-tag">GitHub Actions</span>
+              <span class="proj-tag">Docker</span>
+              <span class="proj-tag">DevOps</span>
+            </div>
+          </div>
+          <div class="proj-actions">
+            <a href="https://github.com/Priya67803" target="_blank" rel="noopener" class="proj-link" title="Live Deployment">
+              <span>Live Demo</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+            <a href="https://github.com/Priya67803" target="_blank" rel="noopener" class="proj-gh-icon" title="View GitHub Repository">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 09: Adya Pipeline (Only Demo, No Git Link) -->
+        <div class="project-card" data-hue="9">
+          <div>
+            <div class="proj-card-top">
+              <div class="proj-icon-badge">⚡</div>
+              <div class="proj-num">09</div>
+            </div>
+            <div class="proj-title">Adya Pipeline</div>
+            <div class="proj-desc">End-to-end data processing and workflow orchestration pipeline for streaming data.</div>
+            <div class="proj-tags">
+              <span class="proj-tag">Data Pipeline</span>
+              <span class="proj-tag">Orchestration</span>
+              <span class="proj-tag">Python</span>
+            </div>
+          </div>
+          <div class="proj-actions">
+            <a href="https://drive.google.com/file/d/1tYktLqCwlqZKY--F8BKCEKPSQDHRADIC/view?usp=sharing" target="_blank" rel="noopener" class="proj-link" title="Live Demo">
+              <span>Live Demo</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 10: Web Development -->
+        <div class="project-card" data-hue="10">
+          <div>
+            <div class="proj-card-top">
+              <div class="proj-icon-badge">💻</div>
+              <div class="proj-num">10</div>
+            </div>
+            <div class="proj-title">Web Development</div>
+            <div class="proj-desc">Modern, responsive web application ecosystem built with clean architecture and intuitive UI.</div>
+            <div class="proj-tags">
+              <span class="proj-tag">React</span>
+              <span class="proj-tag">Next.js</span>
+              <span class="proj-tag">TypeScript</span>
+              <span class="proj-tag">Tailwind</span>
+            </div>
+          </div>
+          <div class="proj-actions">
+            <a href="https://github.com/Priya67803" target="_blank" rel="noopener" class="proj-link" title="Live Deployment">
+              <span>Live Demo</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+            <a href="https://github.com/Priya67803" target="_blank" rel="noopener" class="proj-gh-icon" title="View GitHub Repository">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 11: ARVR Model (Only Demo, No Git Link) -->
+        <div class="project-card" data-hue="11">
+          <div>
+            <div class="proj-card-top">
+              <div class="proj-icon-badge">🥽</div>
+              <div class="proj-num">11</div>
+            </div>
+            <div class="proj-title">ARVR Model</div>
+            <div class="proj-desc">Interactive 3D spatial visualization and augmented/virtual reality simulation model.</div>
+            <div class="proj-tags">
+              <span class="proj-tag">AR/VR</span>
+              <span class="proj-tag">Three.js</span>
+              <span class="proj-tag">WebXR</span>
+              <span class="proj-tag">3D Vision</span>
+            </div>
+          </div>
+          <div class="proj-actions">
+            <a href="ARVR%201.mp4" target="_blank" rel="noopener" class="proj-link" title="Live Demo">
+              <span>Live Demo</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             </a>
           </div>
         </div>
@@ -2416,8 +2588,10 @@
                   <span class="res-tag-pill">ICEFEET 2026</span>
                 </div>
               </div>
-              <div class="res-card-title">Hybrid Intelligence Learning Architecture for Pulmonary Hypertension</div>
-              <div class="res-card-actions">
+              <div class="res-card-title">Hybrid Intelligence Learning Architecture for Pulmonary Hypertension Diagnosis</div>
+              <div class="res-card-desc">Hybrid deep learning &amp; clinical AI architecture for automated PH detection.</div>
+            </div>
+            <div class="res-card-actions">
               <a href="https://ph-ct-ai-dashboard.onrender.com/" target="_blank" rel="noopener" class="res-btn-primary">
                 <span>Live Demo</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -2436,11 +2610,11 @@
               <div class="res-card-top">
                 <div class="res-num-badge">03</div>
                 <div class="res-badge-group">
-                  <span class="res-tag-pill">📄 ACCEPTED PUBLICATION</span>
+                  <span class="res-tag-pill">📄 PRESENTED &amp; ACCEPTED</span>
                   <span class="res-tag-pill">IC-SIIT 2026</span>
                 </div>
               </div>
-              <div class="res-card-title">Scalable Aircraft Engine Fault Detection via Attention Autoencoding</div>
+              <div class="res-card-title">Scalable Fault Detection in Aircraft Engines via Sequence Modelling and Attention-Based Autoencoding</div>
               <div class="res-card-desc">High-accuracy predictive maintenance model using attention autoencoders for sensor streams.</div>
             </div>
             <div class="res-card-actions">
@@ -2595,6 +2769,106 @@
               </div>
             </div>
             <a href="/snowflake.pdf" target="_blank" rel="noopener" class="cert-link-btn">
+              <span>View Certificate</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+
+          <!-- Additional Card 07 -->
+          <div class="cert-gallery-item" data-cert="3">
+            <div>
+              <div class="cert-card-top">
+                <div class="cert-num-badge">07</div>
+                <div class="cert-logo-box">ACN</div>
+              </div>
+              <div class="cert-card-body">
+                <h3>ACN Certification</h3>
+                <div class="cert-sub">ACN</div>
+                <div class="cert-date">📅 2026</div>
+                <p class="cert-desc">Advanced networking and cybersecurity credential.</p>
+              </div>
+            </div>
+            <a href="/ACN Certificate.pdf" target="_blank" rel="noopener" class="cert-link-btn">
+              <span>View Certificate</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+
+          <!-- Additional Card 08 -->
+          <div class="cert-gallery-item" data-cert="4">
+            <div>
+              <div class="cert-card-top">
+                <div class="cert-num-badge">08</div>
+                <div class="cert-logo-box">Microsoft</div>
+              </div>
+              <div class="cert-card-body">
+                <h3>AI Skills Passport</h3>
+                <div class="cert-sub">Microsoft</div>
+                <div class="cert-date">📅 2026</div>
+                <p class="cert-desc">Comprehensive training in artificial intelligence foundations.</p>
+              </div>
+            </div>
+            <a href="/AI Skills Passport Microsoft certificate.pdf" target="_blank" rel="noopener" class="cert-link-btn">
+              <span>View Certificate</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+
+          <!-- Additional Card 09 -->
+          <div class="cert-gallery-item" data-cert="1">
+            <div>
+              <div class="cert-card-top">
+                <div class="cert-num-badge">09</div>
+                <div class="cert-logo-box">Workshop</div>
+              </div>
+              <div class="cert-card-body">
+                <h3>Technical Workshop</h3>
+                <div class="cert-sub">Priyadarshini V</div>
+                <div class="cert-date">📅 2026</div>
+                <p class="cert-desc">Hands-on technical workshop completion certificate.</p>
+              </div>
+            </div>
+            <a href="/certificate-priyadarshini-v.png" target="_blank" rel="noopener" class="cert-link-btn">
+              <span>View Certificate</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+
+          <!-- Additional Card 10 -->
+          <div class="cert-gallery-item" data-cert="2">
+            <div>
+              <div class="cert-card-top">
+                <div class="cert-num-badge">10</div>
+                <div class="cert-logo-box">DevOps</div>
+              </div>
+              <div class="cert-card-body">
+                <h3>DevOps Certification</h3>
+                <div class="cert-sub">DevOps</div>
+                <div class="cert-date">📅 2026</div>
+                <p class="cert-desc">Continuous integration, deployment pipelines, and cloud infrastructure.</p>
+              </div>
+            </div>
+            <a href="/Devops Certificate.pdf" target="_blank" rel="noopener" class="cert-link-btn">
+              <span>View Certificate</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+
+          <!-- Additional Card 11 -->
+          <div class="cert-gallery-item" data-cert="3">
+            <div>
+              <div class="cert-card-top">
+                <div class="cert-num-badge">11</div>
+                <div class="cert-logo-box">MongoDB</div>
+              </div>
+              <div class="cert-card-body">
+                <h3>MongoDB Data Modeling</h3>
+                <div class="cert-sub">MongoDB</div>
+                <div class="cert-date">📅 2026</div>
+                <p class="cert-desc">NoSQL database design, querying, and performance optimization.</p>
+              </div>
+            </div>
+            <a href="/Mongodb certificate.pdf" target="_blank" rel="noopener" class="cert-link-btn">
               <span>View Certificate</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
