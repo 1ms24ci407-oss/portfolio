@@ -479,17 +479,18 @@
     gap: 16px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3);
   }
-    backdrop-filter: blur(24px) saturate(140%);
-    -webkit-backdrop-filter: blur(24px) saturate(140%);
-    border: 1.5px solid rgba(255, 255, 255, 0.25);
-    border-radius: 24px;
-    padding: 18px 28px;
-    max-width: 1040px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  
+  @media (max-width: 768px) {
+    .hero-stats-floating-card {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 16px 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero-stats-floating-card {
+      grid-template-columns: 1fr;
+    }
   }
   .hero-stat-box {
     display: flex;
@@ -1078,7 +1079,28 @@
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
     margin-top: 10px;
   }
-
+  
+  @media (max-width: 768px) {
+    .journey-highlights-banner {
+      grid-template-columns: repeat(2, 1fr);
+      border-radius: 24px;
+      padding: 16px 20px;
+    }
+    .journey-high-box:nth-child(2n) {
+      border-right: none !important;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .journey-highlights-banner {
+      grid-template-columns: 1fr;
+    }
+    .journey-high-box:not(:last-child) {
+      border-right: none !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding-bottom: 12px;
+    }
+  }
   .journey-high-box {
     display: flex;
     align-items: center;
@@ -1875,6 +1897,7 @@
     .project-desc { font-size: 0.9rem; line-height: 1.4; }
     
     .research-scroll-container { grid-template-columns: 1fr; gap: 16px; }
+    .research-scroll-container .scroll-card-wrapper { grid-column: 1 / -1 !important; }
     .scroll-triggered-card { padding: 16px; border-radius: 16px; }
     .res-card-title { font-size: 1.05rem; line-height: 1.3; }
     .res-card-desc { font-size: 0.9rem; line-height: 1.4; }
@@ -2481,21 +2504,21 @@
               <div class="proj-icon-badge">💻</div>
               <div class="proj-num">10</div>
             </div>
-            <div class="proj-title">Web Development</div>
-            <div class="proj-desc">Modern, responsive web application ecosystem built with clean architecture and intuitive UI.</div>
+            <div class="proj-title">Security Learners</div>
+            <div class="proj-desc">A comprehensive web application focusing on security education and interactive learning modules.</div>
             <div class="proj-tags">
               <span class="proj-tag">React</span>
               <span class="proj-tag">Next.js</span>
-              <span class="proj-tag">TypeScript</span>
+              <span class="proj-tag">Security</span>
               <span class="proj-tag">Tailwind</span>
             </div>
           </div>
           <div class="proj-actions">
-            <a href="https://github.com/Priya67803" target="_blank" rel="noopener" class="proj-link" title="Live Deployment">
+            <a href="https://security-learners.vercel.app/" target="_blank" rel="noopener" class="proj-link" title="Live Deployment">
               <span>Live Demo</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             </a>
-            <a href="https://github.com/Priya67803" target="_blank" rel="noopener" class="proj-gh-icon" title="View GitHub Repository">
+            <a href="https://github.com/Priya67803/security_learners" target="_blank" rel="noopener" class="proj-gh-icon" title="View GitHub Repository">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
             </a>
           </div>
