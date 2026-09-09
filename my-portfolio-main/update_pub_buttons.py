@@ -5,7 +5,7 @@ with open('app/page.tsx', 'r', encoding='utf-8') as f:
 def cyan_buttons(email_subject):
     return [
         '                                        <div className="flex flex-wrap gap-3">\n',
-        f'                                            <Button variant="outline" asChild className="w-fit border-cyan-500/30 hover:bg-cyan-500/10 text-cyan-400 font-bold gap-2"><a href="mailto:priya6780@gmail.com?subject={email_subject}">Request Abstract <Mail className="w-4 h-4" /></a></Button>\n',
+        f'                                            <Button variant="outline" asChild className="w-fit border-cyan-500/30 hover:bg-cyan-500/10 text-cyan-400 font-bold gap-2"><a href="mailto:www.priya6780@gmail.com?subject={email_subject}">Request Abstract <Mail className="w-4 h-4" /></a></Button>\n',
         '                                            <Button variant="outline" asChild className="w-fit border-white/10 hover:bg-white/5 text-slate-300 font-bold gap-2"><a href="#" target="_blank" rel="noopener noreferrer"><FileText className="w-4 h-4" /> View Paper</a></Button>\n',
         '                                        </div>\n',
     ]
@@ -13,7 +13,7 @@ def cyan_buttons(email_subject):
 def blue_buttons(email_subject):
     return [
         '                                        <div className="flex flex-wrap gap-3">\n',
-        f'                                            <Button variant="outline" asChild className="w-fit border-blue-500/30 hover:bg-blue-500/10 text-blue-400 font-bold gap-2"><a href="mailto:priya6780@gmail.com?subject={email_subject}">Request Abstract <Mail className="w-4 h-4" /></a></Button>\n',
+        f'                                            <Button variant="outline" asChild className="w-fit border-blue-500/30 hover:bg-blue-500/10 text-blue-400 font-bold gap-2"><a href="mailto:www.priya6780@gmail.com?subject={email_subject}">Request Abstract <Mail className="w-4 h-4" /></a></Button>\n',
         '                                            <Button variant="outline" asChild className="w-fit border-white/10 hover:bg-white/5 text-slate-300 font-bold gap-2"><a href="#" target="_blank" rel="noopener noreferrer"><FileText className="w-4 h-4" /> View Paper</a></Button>\n',
         '                                        </div>\n',
     ]

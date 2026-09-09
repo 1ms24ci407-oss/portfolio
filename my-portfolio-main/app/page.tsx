@@ -147,7 +147,7 @@ export default function LandingPage() {
         </span>
 
         <h1
-          className="text-[clamp(3.2rem,7.5vw,6rem)] font-extrabold leading-[1.05] text-[#0F172A] tracking-[-0.5px] mb-2.5 shadow-sm"
+          className="text-[clamp(2.2rem,7.5vw,6rem)] font-extrabold leading-[1.05] text-[#0F172A] tracking-[-0.5px] mb-2.5 shadow-sm whitespace-nowrap"
           style={{
             fontFamily: "'Baloo 2', cursive",
             textShadow: "0 4px 20px rgba(15, 23, 42, 0.08)",

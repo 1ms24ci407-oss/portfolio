@@ -407,6 +407,17 @@ export default function Portfolio() {
                                                 Participated in an industrial visit to BHEL, gaining practical exposure to large-scale manufacturing processes, industrial automation, engineering systems, production workflows, and plant operations.
                                             </li>
                                         </ul>
+                                        <div className="mt-6 pt-4 border-t border-white/5">
+                                            <a 
+                                                href="https://drive.google.com/file/d/1D7ziaMpRwUHhjWBjersqEQMvfIWmQj-T/view" 
+                                                target="_blank" 
+                                                rel="noopener noreferrer" 
+                                                className="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 rounded-lg hover:bg-cyan-500/20 transition-colors"
+                                            >
+                                                View Certificate
+                                                <ExternalLink className="w-4 h-4" />
+                                            </a>
+                                        </div>
                                     </div>
                                 </motion.div>
 
@@ -444,6 +455,17 @@ export default function Portfolio() {
                                                 Conducted security log analysis, supported incident response, and applied foundational malware analysis techniques for threat identification.
                                             </li>
                                         </ul>
+                                        <div className="mt-6 pt-4 border-t border-white/5">
+                                            <a 
+                                                href="https://drive.google.com/file/d/11LV3c_7YvIQK0Kx3Foiry8p-UVtxKy9m/view" 
+                                                target="_blank" 
+                                                rel="noopener noreferrer" 
+                                                className="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 rounded-lg hover:bg-cyan-500/20 transition-colors"
+                                            >
+                                                View Certificate
+                                                <ExternalLink className="w-4 h-4" />
+                                            </a>
+                                        </div>
                                     </div>
                                 </motion.div>
                             </div>
@@ -685,7 +707,6 @@ export default function Portfolio() {
                                     </h3>
                                     <ul className="grid sm:grid-cols-2 gap-4">
                                         {[
-                                            { name: "Internship Certification - Razz Security", link: "/internship%20certificate.pdf" },
                                             { name: "AWS Academy - ML Foundations", link: "/AWS_Academy_Graduate___Machine_Learning_Foundations___Training_Badge_Badge20251110-30-ja54zf.pdf" },
                                             { name: "Generative AI Leader - Google Cloud", link: "/Gen ai.pdf" },
                                             { name: "Deep Learning - Google Cloud", link: "/deep learning.pdf" },

@@ -59,13 +59,13 @@ content = content.replace(old_skills, new_skills)
 
 # Replace Contact section with Let's Connect form
 old_contact = """<motion.div variants={slideInRight} className="space-y-6">
-                                <a href="mailto:priya6780@gmail.com" className="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/10 hover:border-cyan-500/50 transition-colors group">
+                                <a href="mailto:www.priya6780@gmail.com" className="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/10 hover:border-cyan-500/50 transition-colors group">
                                     <div className="w-12 h-12 bg-cyan-500/10 rounded-full flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
                                         <Mail className="w-6 h-6" />
                                     </div>
                                     <div>
                                         <h4 className="text-white font-bold">Email</h4>
-                                        <p className="text-slate-400 text-sm">priya6780@gmail.com</p>
+                                        <p className="text-slate-400 text-sm">www.priya6780@gmail.com</p>
                                     </div>
                                 </a>
                                 <a href="https://www.linkedin.com/in/priya-v-77b396273/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/10 hover:border-blue-500/50 transition-colors group">
